@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>التسجيل في البطولة</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:white;
+  text-align:center;
+}
+
+.container{
+  margin-top:80px;
+}
+
+h1{
+  font-size:40px;
+  text-shadow:0 0 20px #00ffcc;
+}
+
+form{
+  background:rgba(255,255,255,0.05);
+  width:90%;
+  max-width:400px;
+  margin:30px auto;
+  padding:25px;
+  border-radius:15px;
+  backdrop-filter:blur(6px);
+}
+
+input, select{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:none;
+  border-radius:8px;
+  font-size:15px;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  background:#00ffcc;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background:white;
+  transform:scale(1.05);
+}
+
+#message{
+  margin-top:15px;
+  font-weight:bold;
+  color:#00ffcc;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📝 التسجيل في البطولة</h1>
+
+<form onsubmit="showMessage(event)">
+  <input type="text" placeholder="الاسم الكامل" required>
+  
+  <select required>
+    <option value="">اختر فريقك</option>
+    <option>Real Madrid</option>
+    <option>Barcelona</option>
+    <option>Manchester City</option>
+    <option>Bayern Munich</option>
+    <option>PSG</option>
+    <option>Liverpool</option>
+  </select>
+  
+  <input type="tel" placeholder="رقم واتساب" required>
+  
+  <input type="text" placeholder="Game ID (اختياري)">
+  
+  <button type="submit">تأكيد التسجيل</button>
+</form>
+
+<p id="message"></p>
+
+</div>
+
+<script>
+function showMessage(event){
+  event.preventDefault();
+  document.getElementById("message").innerHTML = 
+  "✅ تم التسجيل بنجاح! سيتم التواصل معك عبر واتساب.";
+}
+</script>
+
+</body>
+</html>
